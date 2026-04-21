@@ -43,10 +43,11 @@ jobs:
     steps: 
       - name: downlaod artificatc
         uses: actions/download-artifact@v4
-      - name: Read file 
-        run: cat dragon.txt 
         with: 
             name: my-artifact
+      - name: Read file 
+        run: cat dragon.txt 
+
 
       - name: Deploy 
         run: echo deployeiinnn......
