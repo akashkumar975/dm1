@@ -26,24 +26,25 @@ jobs:
     runs-on: ubuntu-latest  
     needs: build_job_1
     steps: 
-      - name: sleep for 10 sec
-        run: sleep 10 
-
-      - name: test file exists 
-        run: grep -i "dragon" dragon.txt
       - name: download artifact 
         uses: actions/download-artifact@v4
         with: 
             name: my-artifact
 
+      - name: test file exists 
+        run: grep -i "dragon" dragon.txt
+
+      - name: location of file
+        run: ls -ltr
+
   build_job_3: 
     needs: ["build_job_1","build_job_2"]
     runs-on: ubuntu-latest
     steps: 
-      - name: Read file 
-        run: cat dragon.txt 
       - name: downlaod artificatc
         uses: actions/download-artifact@v4
+      - name: Read file 
+        run: cat dragon.txt 
         with: 
             name: my-artifact
 
