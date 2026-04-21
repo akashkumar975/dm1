@@ -15,7 +15,7 @@ jobs:
       - name: sleep for 30 seconds
         run: sleep 30 
       - name: upload dragon text file 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with: 
           name: my-artifact
           path: path/to/artifact/world.txt
@@ -30,7 +30,7 @@ jobs:
       - name: test file exists 
         run: grep -i "dragon" dragon.txt
       - name: download artifact 
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with: 
             name: my-artifact
 
@@ -41,7 +41,7 @@ jobs:
       - name: Read file 
         run: cat dragon.txt 
       - name: downlaod artificatc
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with: 
             name: my-artifact
 
