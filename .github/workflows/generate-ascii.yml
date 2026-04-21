@@ -14,12 +14,12 @@ jobs:
 
       - name: pwd
         run: | 
-             pwd,
-             ls -ltr
+              pwd
+              ls -ltr
       - name: upload dragon text file 
         uses: actions/upload-artifact@v4
         with: 
-          name: my-artifact
+          name:  my-artifact
           path: /home/runner/work/dm1/dm1/dragon.txt
 
   build_job_2:
