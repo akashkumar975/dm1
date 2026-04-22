@@ -5,6 +5,7 @@ on:
 
 concurrency: 
   cancel-in-progress: false
+  group: timepass
 
 jobs: 
   work_in_window:
