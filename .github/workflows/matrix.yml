@@ -8,17 +8,28 @@ concurrency:
   group: matrix
 
 jobs: 
- deploy-in-windows:
-   runs-on: windows-latest 
-   steps:
-      - name: docker info
-        run: docker info
-      - name: run the container
-        run: docker run hello-world 
- deploy-in-linux: 
-   runs-on: ubuntu-latest 
+  deploy: 
+   strategy: 
+     matrix: 
+       os: [ubuntu-latest,windows-latest]
+       images: [hello-world,alpine]
+   runs-on: ${{ matrix.os }}
    steps: 
-     - name: docker info 
-       run: docker info 
-     - name: run the container 
-       run: docker run hello-world
+    - name: echo docker detials
+      run: docker info 
+    - name: Run image on ${{ matrix.os}}
+      run: docker run ${{ matrix. images}}
+#  deploy-in-windows:
+#    runs-on: windows-latest 
+#    steps:
+#       - name: docker info
+#         run: docker info
+#       - name: run the container
+#         run: docker run hello-world 
+#  deploy-in-linux: 
+#    runs-on: ubuntu-latest 
+#    steps: 
+#      - name: docker info 
+#        run: docker info 
+#      - name: run the container 
+#        run: docker run hello-world
