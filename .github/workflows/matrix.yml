@@ -4,7 +4,7 @@ on:
  push
 
 concurrency:
-  canel-in-progress: true
+  cancel-in-progress: true
   group: matrix
 
 jobs: 
