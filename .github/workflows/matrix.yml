@@ -5,7 +5,7 @@ on:
 
 concurrency:
   cancel-in-progress: true
-  group: matrix
+  group:  matrix
 
 jobs: 
   deploy: 
