@@ -16,7 +16,7 @@ jobs:
       - name: run images 
         run: docker run hello-world 
   work_in_linux:
-    runs-on: ubuntu-latest
+    runs-on:  ubuntu-latest
     steps: 
     - name: checking docker information 
       run: docker info
