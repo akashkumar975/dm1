@@ -3,6 +3,8 @@ name: generated ASCII Artwork
 on: 
   workflow_dispatch
 
+concurrency: 
+   cancel-in-progress: true
 jobs: 
   build_job_1:
     runs-on: ubuntu-latest
