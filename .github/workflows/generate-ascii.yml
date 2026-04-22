@@ -33,6 +33,7 @@ jobs:
 
       - name: test file exists 
         run: grep -i "dragon" dragon.txt
+             sleeps 600s
 
       - name: location of file
         run: ls -ltr
