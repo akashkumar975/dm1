@@ -1,27 +1,24 @@
-name: matrix_check
+name: matrix check
 
-on: 
- push 
+on:
+ push
 
-concurrency: 
-  cancel-in-progress: false
-  group: timepass
+concurrency:
+  canel-in-progress: true
+  group: matrix
 
 jobs: 
-  work_in_window:
-
-    runs-on: ubuntu-latest
-    steps: 
-      - name: checking docekr information
-        run: docker info 
-      - name: run images 
+ deploy-in-windows:
+   runs-on: windows-latest 
+   steps:
+      - name: docker info
+        run: docker info
+      - name: run the container
         run: docker run hello-world 
-  work_in_linux:
-    runs-on:  ubuntu-latest
-    steps: 
-    - name: checking docker information 
-      run: docker info
-    - name: run images
-      run: docker run hello-world
-
-  
+ deploy-in-linux: 
+   runs-on: ubuntu-latest 
+   steps: 
+     - name: docker info 
+       run: docker info 
+     - name: run the container 
+       run: docker run hello-world
