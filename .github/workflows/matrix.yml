@@ -1,0 +1,26 @@
+name: matrix_check
+
+on: 
+ push 
+
+concurrency: 
+  cancel-in-progress: false
+
+jobs: 
+  work_in_window:
+
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checking docekr information
+        run: docker info 
+      - name: run images 
+        run: docker run hello-world 
+  work_in_linux:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: checking docker information 
+      run: docker info
+    - name: run images
+      run: docker run hello-world
+
+  
