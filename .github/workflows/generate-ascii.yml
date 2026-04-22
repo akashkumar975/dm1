@@ -4,6 +4,7 @@ on:
   workflow_dispatch
 
 concurrency: 
+   group: poc
    cancel-in-progress: true
 jobs: 
   build_job_1:
